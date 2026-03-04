@@ -2,8 +2,6 @@
 
 # Eleventy Sveltia CMS Starter
 
-## Demo: https://eleventy-sveltia-cms-starter.netlify.app/
-
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/danurbanowicz/eleventy-sveltia-cms-starter)
 
 ## What is it?
@@ -37,7 +35,7 @@ The aim is to get you up and running in a few minutes with a free, fast, and sec
 
 Optionally, you can [Deploy to this template to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/danurbanowicz/eleventy-sveltia-cms-starter) which will create a new GitHub repository for you and link it to your Netlify account, configuring automatic deploys in one step.
 
-*Important: You will still need to configure the CMS and set up an OAuth application in GitHub to be able to authenticate and use the CMS on your live site (see steps below).*
+_Important: You will still need to configure the CMS and set up an OAuth application in GitHub to be able to authenticate and use the CMS on your live site (see steps below)._
 
 ## Install this template
 
@@ -62,7 +60,7 @@ You can work locally with Eleventy and the CMS without needing to configure any 
 
 ## Configure the CMS for your live site
 
-Sveltia CMS needs to be connected to your GitHub account so it can authenticate you and make changes to your live site's content. Netlify facilitates this connection to GitHub for you. Note that all of your CMS users will need to have push access permissions to your content repository before they can log in. *Sveltia CMS does not yet support Netlify CMS's Git Gateway authentication method.*
+Sveltia CMS needs to be connected to your GitHub account so it can authenticate you and make changes to your live site's content. Netlify facilitates this connection to GitHub for you. Note that all of your CMS users will need to have push access permissions to your content repository before they can log in. _Sveltia CMS does not yet support Netlify CMS's Git Gateway authentication method._
 
 1. Set up OAuth: In GitHub, go to your account **Settings** and select **Developer Settings**, then **OAuth Apps** or use [this shortcut](https://github.com/settings/developers).
 2. Press the **New OAuth App** button
@@ -78,6 +76,7 @@ backend:
   repo: owner-name/repo-name # Path to your GitHub repository
   branch: master # Optional, defaults to master
 ```
+
 8. Push your changes to GitHub, wait for the new deploy to complete, and try logging in to your CMS admin e.g. `https://[your-netlify-site].netlify.app/admin/`.
 
 ## How Sveltia CMS works
@@ -99,6 +98,7 @@ If you've found a bug or think something in this template is broken (very possib
 If you have a question specifically related to the Sveltia CMS project, we recommend you to head over there and [open a discussion](https://github.com/sveltia/sveltia-cms/discussions) for faster support.
 
 ## TO DO
+
 - Add quick CMS tips e.g. Sveltia CMS preferences
 - Finish the authors and blog page layouts
 - Add descriptive comments in project files to help new users
