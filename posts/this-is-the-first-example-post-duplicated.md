@@ -8,7 +8,7 @@ tags:
   - environment
   - politics
   - sport
-image: https://unsplash.com/photos/couple-shopping-for-gourds-at-an-outdoor-market-BlXa_riHlp4
+image: https://images.unsplash.com/photo-1761839258289-72f12b0de058?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 imageAltText: outdoor market
 description: This is a sample meta description. If one is not present in your page/post's front matter, the default settings.description will be used instead.
 ---
