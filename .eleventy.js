@@ -6,41 +6,41 @@ const yaml = require("js-yaml");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const Image = require("@11ty/eleventy-img");
 
-module.exports = function(eleventyConfig) {
-
+module.exports = function (eleventyConfig) {
   // https://www.11ty.dev/docs/plugins/image/
-  eleventyConfig.addShortcode("generateImage", async function(src, alt, sizes) {
-    
-    let metadata = await Image(src, {
-      widths: [500, 1000, "auto"],
-      formats: ["avif", "jpeg"],
-      urlPath: "/assets/img/",
-      outputDir: "./_site/assets/img/"
-    });
+  eleventyConfig.addShortcode(
+    "generateImage",
+    async function (src, alt, sizes) {
+      let metadata = await Image(src, {
+        widths: [500, 1000, "auto"],
+        formats: ["avif", "jpeg"],
+        urlPath: "/assets/img/",
+        outputDir: "./_site/assets/img/",
+      });
 
-    let imageAttributes = {
-      alt,
-      sizes,
-      loading: "lazy",
-      decoding: "async",
-    };
-    
-    return Image.generateHTML(metadata, imageAttributes);
-  
-  });
+      let imageAttributes = {
+        alt,
+        sizes,
+        loading: "lazy",
+        decoding: "async",
+      };
+
+      return Image.generateHTML(metadata, imageAttributes);
+    },
+  );
 
   // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   // Add support for YAML data files with .yml extension
-  eleventyConfig.addDataExtension("yml", contents => yaml.load(contents));
+  // eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
 
   // Merge data instead of overriding
   // https://www.11ty.dev/docs/data-deep-merge/
-  eleventyConfig.setDataDeepMerge(true);
+  // eleventyConfig.setDataDeepMerge(true);
 
   // Add support for post authors
-  eleventyConfig.addCollection("myAuthors", collection => {
+  eleventyConfig.addCollection("myAuthors", (collection) => {
     const blogs = collection.getFilteredByGlob("posts/*.md");
     return blogs.reduce((coll, post) => {
       const author = post.data.author;
@@ -56,12 +56,12 @@ module.exports = function(eleventyConfig) {
   });
 
   // Date formatting (human readable)
-  eleventyConfig.addFilter("readableDate", dateObj => {
+  eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toFormat("LLL d yyyy");
   });
 
   // Date formatting (machine readable)
-  eleventyConfig.addFilter("machineDate", dateObj => {
+  eleventyConfig.addFilter("machineDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
   });
 
@@ -71,12 +71,12 @@ module.exports = function(eleventyConfig) {
   });
 
   // Minify CSS
-  eleventyConfig.addFilter("cssmin", function(code) {
+  eleventyConfig.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
   });
 
   // Minify JS
-  eleventyConfig.addFilter("jsmin", function(code) {
+  eleventyConfig.addFilter("jsmin", function (code) {
     let minified = UglifyJS.minify(code);
     if (minified.error) {
       console.log("UglifyJS error: ", minified.error);
@@ -86,12 +86,12 @@ module.exports = function(eleventyConfig) {
   });
 
   // Minify HTML output
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (outputPath.indexOf(".html") > -1) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
       });
       return minified;
     }
@@ -104,7 +104,7 @@ module.exports = function(eleventyConfig) {
 
   // Disable 11ty dev server live reload when using CMS locally
   eleventyConfig.setServerOptions({
-    liveReload: false
+    liveReload: false,
   });
 
   return {
@@ -123,7 +123,7 @@ module.exports = function(eleventyConfig) {
       input: ".",
       includes: "_includes",
       data: "_data",
-      output: "_site"
-    }
+      output: "_site",
+    },
   };
 };
