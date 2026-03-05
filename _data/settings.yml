@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-title: Kiri Eleventy Sveltia CMS
-=======
 title: Kiri Eleventy Sveltia
->>>>>>> 0709ce7 (add url)
 description: A template for building a fast Eleventy blog with Sveltia CMS, with deployment to Netlify
 url: https://kiri-eleventy-sveltia.netlify.app
