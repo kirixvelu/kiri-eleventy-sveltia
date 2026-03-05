@@ -1,13 +1,11 @@
 ---
 title: This is the first example post duplicated
-date: 2026-03-04T18:42:00
+date: 2026-03-05T10:31:00
 author: John Doe
 summary: Why contemplating our mortality can increase customer success by up to 500%
 tags:
   - tech
   - environment
-  - politics
-  - sport
 image: https://images.unsplash.com/photo-1761839258289-72f12b0de058?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 imageAltText: outdoor market
 description: This is a sample meta description. If one is not present in your page/post's front matter, the default settings.description will be used instead.
