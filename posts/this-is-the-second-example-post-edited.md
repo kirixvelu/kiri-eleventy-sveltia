@@ -1,6 +1,6 @@
 ---
 title: This is the second example post - edited
-date: 2026-03-04T23:04:00
+date: 2026-03-05T22:47:00
 author: New Tag
 summary: Why contemplating our mortality can increase office productivity by 500%
 tags:
