@@ -32,8 +32,8 @@ module.exports = function (eleventyConfig) {
   // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-  // Add support for YAML data files with .yml extension
-  // eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
+  //Add support for YAML data files with .yml extension
+  eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
 
   // Merge data instead of overriding
   // https://www.11ty.dev/docs/data-deep-merge/
